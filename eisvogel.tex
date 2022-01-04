@@ -296,6 +296,8 @@ $else$
     \setlength{\parskip}{6pt plus 2pt minus 1pt}}
 }{% if KOMA class
   \KOMAoptions{parskip=half}}
+  % Dot fill the table of contents for sections
+  \RedeclareSectionCommand[toclinefill=\dotfill]{section}
 \makeatother
 $endif$
 $if(verbatim-in-note)$
