@@ -997,6 +997,7 @@ $endif$
 \par
 \noindent
 
+$if(use-sans-font)$
 $if(titlepage-background)$
 % The titlepage with a background image has other text spacing and text size
 {
@@ -1026,6 +1027,37 @@ $else$
   \vfill
 }
 $endif$
+$else$
+$if(titlepage-background)$
+% The titlepage with a background image has other text spacing and text size
+{
+  \setstretch{2}
+  \vfill
+  \vskip -8em
+  \noindent {\huge \textbf{\textrm{$title$}}}
+  $if(subtitle)$
+  \vskip 1em
+  {\Large \textrm{$subtitle$}}
+  $endif$
+  \vskip 2em
+  \noindent {\Large \textrm{$for(author)$$author$$sep$, $endfor$} \vskip 0.6em \textrm{$date$}}
+  \vfill
+}
+$else$
+{
+  \setstretch{1.4}
+  \vfill
+  \noindent {\huge \textbf{\textrm{$title$}}}
+  $if(subtitle)$
+  \vskip 1em
+  {\Large \textrm{$subtitle$}}
+  $endif$
+  \vskip 2em
+  \noindent {\Large \textrm{$for(author)$$author$$sep$, $endfor$}}
+  \vfill
+}
+$endif$
+$endif$
 
 $if(titlepage-logo)$
 \noindent
@@ -1034,7 +1066,7 @@ $endif$
 
 $if(titlepage-background)$
 $else$
-\textsf{$date$}
+\textrm{$date$}
 $endif$
 \end{flushleft}
 \end{titlepage}
