@@ -74,6 +74,17 @@ $for(classoption)$
 $endfor$
   ,captions=tableheading
 ]{$if(beamer)$$documentclass$$else$$if(book)$scrbook$else$scrartcl$endif$$endif$}
+
+%% Copyrightbox
+\usepackage{copyrightbox}
+% This section is needed because the original command uses \sf and crashes
+\makeatletter
+\renewcommand{\CRB@setcopyrightfont}{%
+  \footnotesize
+  \color{black!33}
+}
+\makeatother
+
 $if(beamer)$
 $if(background-image)$
 \usebackgroundtemplate{%
