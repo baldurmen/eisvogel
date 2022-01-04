@@ -312,9 +312,10 @@ $if(footnotes-pretty)$
 % load footmisc in order to customize footnotes (footmisc has to be loaded before hyperref, cf. https://tex.stackexchange.com/a/169124/144087)
 \usepackage[hang,flushmargin,bottom,multiple]{footmisc}
 \setlength{\footnotemargin}{0.8em} % set space between footnote nr and text
-\setlength{\footnotesep}{\baselineskip} % set space between multiple footnotes
+\setlength{\footnotesep}{0.5cm} % set space between multiple footnotes
 \setlength{\skip\footins}{0.3cm} % set space between page content and footnote
 \setlength{\footskip}{0.9cm} % set space between footnote and page bottom
+\interfootnotelinepenalty=10000 % don't split footnotes in 2
 $endif$
 $if(geometry)$
 $if(beamer)$
