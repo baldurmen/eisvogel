@@ -758,6 +758,11 @@ $endif$
 $if(beamer)$
 $else$
 \addtokomafont{section}{\color{heading-color}}
+% Have everything use the serif font
+$if(use-sans-font)$
+$else$
+\addtokomafont{disposition}{\rmfamily}
+$endif$
 $endif$
 % When using the classes report, scrreprt, book,
 % scrbook or memoir, uncomment the following line.
