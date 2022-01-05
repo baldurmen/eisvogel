@@ -1090,7 +1090,8 @@ $endif$
 \end{flushleft}
 \end{titlepage}
 \restoregeometry
-\pagenumbering{arabic}
+% Use Roman numbers for the toc and other tables
+\pagenumbering{roman}
 $endif$
 $endif$
 
@@ -1164,6 +1165,8 @@ $endif$
 $if(has-frontmatter)$
 \mainmatter
 $endif$
+% Convert back to arabic page numbering
+\pagenumbering{arabic}
 $body$
 
 $if(has-frontmatter)$
