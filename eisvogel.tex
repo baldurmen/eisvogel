@@ -75,6 +75,9 @@ $endfor$
   ,captions=tableheading
 ]{$if(beamer)$$documentclass$$else$$if(book)$scrbook$else$scrartcl$endif$$endif$}
 
+%% Wrapfig
+\usepackage{wrapfig}
+
 %% Copyrightbox
 \usepackage{copyrightbox}
 % This section is needed because the original command uses \sf and crashes
