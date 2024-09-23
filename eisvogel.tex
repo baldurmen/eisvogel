@@ -84,6 +84,11 @@ $endfor$
 %% Pdfpage
 \usepackage{pdfpages}
 
+$if(watermark)$
+\usepackage{background}
+\SetBgContents{$watermark$}
+$endif$
+
 % This section is needed because the original command uses \sf and crashes
 \makeatletter
 \renewcommand{\CRB@setcopyrightfont}{%
