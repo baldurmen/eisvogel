@@ -831,6 +831,17 @@ $endif$
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 
 %
+% set background color for inline code
+%
+
+\definecolor{bgcolor}{HTML}{E0E0E0}
+\let\oldtexttt\texttt
+
+\renewcommand{\texttt}[1]{
+  \colorbox{bgcolor}{\oldtexttt{#1}}
+}
+
+%
 %
 % Listings
 %
