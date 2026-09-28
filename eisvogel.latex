@@ -655,6 +655,17 @@ $endif$
 \usepackage[font={stretch=1.2}, textfont={color=caption-color}, position=top, skip=4mm, labelfont=bf, singlelinecheck=false, justification=$if(caption-justification)$$caption-justification$$else$raggedright$endif$]{caption}
 \setcapindent{0em}
 
+% Copyrightbox
+\usepackage{copyrightbox}
+\usepackage{wrapfig}
+% This section is needed because the original command uses \sf and crashes
+\makeatletter
+\renewcommand{\CRB@setcopyrightfont}{%
+  \footnotesize
+  \color{black!33}
+}
+\makeatother
+
 %
 % blockquote
 %
