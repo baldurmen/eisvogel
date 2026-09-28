@@ -719,6 +719,7 @@ $endif$
 %
 $if(tables)$
 
+\usepackage{tabularx}
 \definecolor{table-row-color}{HTML}{F5F5F5}
 \definecolor{table-rule-color}{HTML}{999999}
 
