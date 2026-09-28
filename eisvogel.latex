@@ -919,6 +919,11 @@ $if(watermark)$
 \SetWatermarkScale{.5}
 $endif$
 
+%
+% Random packages
+%
+\usepackage{pdfpages}
+
 \begin{document}
 
 $if(titlepage)$
