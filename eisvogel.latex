@@ -923,6 +923,7 @@ $endif$
 % Random packages
 %
 \usepackage{pdfpages}
+\usepackage{rotating}
 
 \begin{document}
 
