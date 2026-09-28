@@ -720,6 +720,8 @@ $endif$
 $if(tables)$
 
 \usepackage{tabularx}
+% support for negative indentations with itemize
+\usepackage{enumitem}
 \definecolor{table-row-color}{HTML}{F5F5F5}
 \definecolor{table-rule-color}{HTML}{999999}
 
