@@ -924,6 +924,7 @@ $endif$
 %
 \usepackage{pdfpages}
 \usepackage{rotating}
+\usepackage{keystroke}
 
 \begin{document}
 
