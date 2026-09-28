@@ -687,7 +687,11 @@ $endif$
 % By default, the KOMA-Script classes will typeset sectioning headings in
 % sans-serif. Use the normal body font for headings.
 \addtokomafont{disposition}{\normalfont\color{heading-color}\bfseries}
-
+% Have everything use the serif font
+$if(use-sans-font)$
+$else$
+\addtokomafont{disposition}{\rmfamily}
+$endif$
 %
 % variables for title, author and date
 %
@@ -923,6 +927,7 @@ $endif$
 \par
 \noindent
 
+$if(use-sans-font)$
 $if(titlepage-background)$
 % The titlepage with a background image has other text spacing and text size
 {
@@ -952,6 +957,37 @@ $else$
   \vfill
 }
 $endif$
+$else$
+$if(titlepage-background)$
+% The titlepage with a background image has other text spacing and text size
+{
+  \setstretch{2}
+  \vfill
+  \vskip -8em
+  \noindent {\huge \textbf{\textrm{$title$}}}
+  $if(subtitle)$
+  \vskip 1em
+  {\Large \textrm{$subtitle$}}
+  $endif$
+  \vskip 2em
+  \noindent {\Large \textrm{$for(author)$$author$$sep$, $endfor$} \vskip 0.6em \textrm{$date$}}
+  \vfill
+}
+$else$
+{
+  \setstretch{1.4}
+  \vfill
+  \noindent {\huge \textbf{\textrm{$title$}}}
+  $if(subtitle)$
+  \vskip 1em
+  {\Large \textrm{$subtitle$}}
+  $endif$
+  \vskip 2em
+  \noindent {\Large \textrm{$for(author)$$author$$sep$, $endfor$}}
+  \vfill
+}
+$endif$
+$endif$
 
 $if(titlepage-logo)$
 \noindent
@@ -960,7 +996,11 @@ $endif$
 
 $if(titlepage-background)$
 $else$
+$if(use-sans-font)$
 \textsf{$date$}
+$else$
+\textrm{$date$}
+$endif$
 $endif$
 \end{flushleft}
 \end{titlepage}
